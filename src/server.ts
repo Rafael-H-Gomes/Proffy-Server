@@ -1,9 +1,20 @@
 import express from 'express';
+import routes from './routes';
 
 const app = express();
 
-app.get('/users', () => {
+app.use(express.json());
+app.use(routes);
 
-});
+//GET: Buscar ou listar uma informação 
+//POST: Criar alguma nova informação
+//PUT: Atualizar uma informação existente
+//DELETE: Deletar uam informaçaõ existente
+
+//Corpo (req.body); Dados para criação uo atualização de um registro
+//Route Params: Identificar qual recurso eu quero atualizar ou deletar
+//Query Params: Paginação, filtros, ordenação
+
+
 
 app.listen(3333);
